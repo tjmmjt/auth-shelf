@@ -1,4 +1,6 @@
-const shelfReducer = (state = ['dog', 'cat'], action) => {
+
+
+const shelfReducer = (state = [], action) => {
     switch (action.type) {
       case 'SET_ITEM':
         return action.payload;
@@ -8,6 +10,6 @@ const shelfReducer = (state = ['dog', 'cat'], action) => {
   };
   
   // user will be on the redux state at:
-  // state.user
+  // state.shelf
   export default shelfReducer;
   
