@@ -1,15 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function ShelfPage() {
 
   const dispatch = useDispatch()
-  
+
   const shelf = useSelector(store => store.shelf)
   console.log('shelf:', shelf);
 
   const handleDelete = () => {
     console.log('handle delete clicked');
+  }
+  useEffect(() => {
+    getItems()
+  }, [])
+  
+  const getItems = () => {
+    dispatch({type:'FETCH_ITEMS'})
   }
 
   return (
