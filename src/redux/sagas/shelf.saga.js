@@ -21,8 +21,13 @@ function* deleteItems (action) {
 }
 
 function* postItem (action) {
+    const item = {
+        description: action.payload,
+        user_id: '1'
+    }
     try {
-        yield axios.post('/api/shelf', action.payload);
+        yield axios.post('/api/shelf', item);
+        
     }
     catch (error) {
         console.log('error posting item', error)     
