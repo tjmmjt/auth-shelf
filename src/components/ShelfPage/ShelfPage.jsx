@@ -13,7 +13,7 @@ function ShelfPage() {
     console.log('handle delete clicked');
     const payload = event.target.id
     console.log('Payload:', payload)
-    // dispatch({type: 'DELETE_ITEM, payload:'})
+     dispatch({type: 'DELETE_ITEM', payload: payload})
   }
   
   useEffect(() => {
@@ -22,6 +22,7 @@ function ShelfPage() {
   
   const getItems = () => {
     dispatch({type:'FETCH_ITEMS'})
+    
 
   }
 
