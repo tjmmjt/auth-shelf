@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import PostItem from '../PostItem/PostItem';
 
 function ShelfPage() {
 
@@ -26,6 +27,7 @@ function ShelfPage() {
   return (
     
     <div className="container">
+      <PostItem/>
       <h2>Shelf</h2>
       {shelf?.map((item, i) => {
         return (
