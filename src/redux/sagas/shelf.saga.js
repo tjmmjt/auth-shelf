@@ -14,7 +14,7 @@ function* getItems (action) {
 
 function* deleteItems (action) {
     try {
-        yield axios.delete('/api/shelf')
+        yield axios.delete('/api/shelf/')
     }
     catch (error) {
     }
