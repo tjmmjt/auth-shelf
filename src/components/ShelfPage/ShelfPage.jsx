@@ -8,22 +8,25 @@ function ShelfPage() {
   const shelf = useSelector(store => store.shelf)
   console.log('shelf:', shelf);
 
-  const handleDelete = () => {
+  const handleDelete = (event) => {
     console.log('handle delete clicked');
+    const payload = event.target.id
+    console.log('Payload:', payload)
+    // dispatch({type: 'DELETE_ITEM, payload:'})
   }
 
   return (
     
     <div className="container">
       <h2>Shelf</h2>
-      <p>{shelf.map((item, i) => {
+      {shelf.map((item, i) => {
         return (
-          <Fragment key={i}>
-          <li >{item}</li>
-          <button onClick = {handleDelete}> Remove from shelf</button>
-          </Fragment>
+          <div key={i}>
+            <span>{item}</span>
+            <button onClick={handleDelete} id={i}> Remove from shelf</button>
+          </div>
         )
-        })}</p>
+        })}
       <p>All of the available items can be seen here.</p>
 
  
