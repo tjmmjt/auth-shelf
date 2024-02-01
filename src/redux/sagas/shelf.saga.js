@@ -24,8 +24,8 @@ function* deleteItems (action) {
 
 function* postItem (action) {
     const item = {
-        description: action.payload,
-        user_id: '1'
+        description: action.payload.description,
+        user_id: action.payload.user_id
     }
     try {
         yield axios.post('/api/shelf', item);
