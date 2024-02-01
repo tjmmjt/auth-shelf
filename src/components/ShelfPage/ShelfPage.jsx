@@ -8,9 +8,13 @@ function ShelfPage() {
   const shelf = useSelector(store => store.shelf)
   console.log('shelf:', shelf);
 
-  const handleDelete = () => {
+  const handleDelete = (event) => {
     console.log('handle delete clicked');
+    const payload = event.target.id
+    console.log('Payload:', payload)
+    // dispatch({type: 'DELETE_ITEM, payload:'})
   }
+  
   useEffect(() => {
     getItems()
   }, [])
