@@ -1,4 +1,4 @@
-const shelfReducer = (state = ['dog'], action) => {
+const shelfReducer = (state = ['dog', 'cat'], action) => {
     switch (action.type) {
       case 'SET_ITEM':
         return action.payload;
