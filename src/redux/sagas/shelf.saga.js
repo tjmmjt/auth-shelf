@@ -27,7 +27,7 @@ function* postItem (action) {
     }
     try {
         yield axios.post('/api/shelf', item);
-        
+
     }
     catch (error) {
         console.log('error posting item', error)     
