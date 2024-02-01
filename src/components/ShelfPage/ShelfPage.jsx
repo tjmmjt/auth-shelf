@@ -22,6 +22,7 @@ function ShelfPage() {
   
   const getItems = () => {
     dispatch({type:'FETCH_ITEMS'})
+
   }
 
   return (
