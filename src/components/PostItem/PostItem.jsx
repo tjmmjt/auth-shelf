@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 function PostItem () {
     const [shelfItem, setShelfItem] = useState('')
+    const dispatch = useDispatch()
 
     const handleSubmit = () => {
         console.log('Putting item on shelf!');
         console.log('shelfItem:', shelfItem);
+
+        dispatch({type:'POST_ITEM', payload: shelfItem})
+        dispatch({type:'FETCH_ITEMS'})
     }
 
     return(
