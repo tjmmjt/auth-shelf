@@ -23,14 +23,14 @@ function ShelfPage() {
     
     <div className="container">
       <h2>Shelf</h2>
-      <p>{shelf.map((item, i) => {
+      {shelf?.map((item, i) => {
         return (
-          <Fragment key={i}>
-          <li >{item}</li>
-          <button onClick = {handleDelete}> Remove from shelf</button>
-          </Fragment>
+          <div key={i}>
+            <span>{item.description}</span>
+            <button onClick = {handleDelete} id={item.id}> Remove from shelf</button>
+          </div>
         )
-        })}</p>
+        })}
       <p>All of the available items can be seen here.</p>
 
  
