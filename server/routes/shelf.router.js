@@ -7,10 +7,14 @@ const router = express.Router();
  */
 router.get("/", (req, res) => {
   // initialize queryText
-  const queryText = `SELECT * FROM "item";`;
+  const queryText = `
+    SELECT * FROM "item"
+    WHERE "user_id"=$1;
+  `;
+  const queryParams = [req.user.id]
   // send query to DB
   pool
-    .query(queryText)
+    .query(queryText, queryParams)
     .then((result) => {
       console.log("result", result);
       // send result in rows
