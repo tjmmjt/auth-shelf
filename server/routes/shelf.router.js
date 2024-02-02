@@ -9,12 +9,12 @@ router.get("/", (req, res) => {
   // initialize queryText
   const queryText = `
     SELECT * FROM "item"
-    WHERE "user_id"=$1;
+ 
   `;
-  const queryParams = [req.user.id]
+  // const queryParams = [req.user.id]
   // send query to DB
   pool
-    .query(queryText, queryParams)
+    .query(queryText)
     .then((result) => {
       console.log("result", result);
       // send result in rows
