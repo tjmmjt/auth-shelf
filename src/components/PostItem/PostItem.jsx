@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function PostItem () {
     const userStore = useSelector(store => store.user)
-    console.log('userStore:', userStore);
+    // console.log('userStore:', userStore);
     const [shelfItem, setShelfItem] = useState('')
     const dispatch = useDispatch()
 
     const handleSubmit = () => {
-        console.log('Putting item on shelf!');
-        console.log('shelfItem:', shelfItem);
+        // console.log('Putting item on shelf!');
+        // console.log('shelfItem:', shelfItem);
         const objectExporting = {user_id: userStore.id, description: shelfItem}
 
         dispatch({type:'POST_ITEM', payload: objectExporting})
