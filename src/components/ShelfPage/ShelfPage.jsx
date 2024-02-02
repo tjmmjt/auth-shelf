@@ -32,7 +32,7 @@ function ShelfPage() {
        dispatch({type: 'DELETE_ITEM', payload: payload})
     }
     else(
-      alert(`"${deleteDescription}" belongs to fuckin tucker`)
+      alert(`"${deleteDescription}" belongs to someone else`)
     )
     // console.log('user id:', shelf);
     // console.log('handle delete clicked');
