@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function PostItem () {
     const userStore = useSelector(store => store.user)
-    // console.log('userStore:', userStore);
+    console.log('userStore:', userStore);
     const [shelfItem, setShelfItem] = useState('')
     const dispatch = useDispatch()
 
