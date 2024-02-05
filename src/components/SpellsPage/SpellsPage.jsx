@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SingleSpell from '../SingleSpell/SingleSpell';
-
+import FilterButton from '../FilterButton/FilterButton';
 
 function SpellsPage () {
     const dispatch = useDispatch()
@@ -25,6 +25,7 @@ function SpellsPage () {
     return (
         <>
         <h1> Here are the spells</h1>
+        <FilterButton/>
         {spells.spellsReducer.results?.map((spell, i) => {
             return (
             <button id={spell.url}
