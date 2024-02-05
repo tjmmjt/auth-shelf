@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 
 
 const spellsReducer = (state = [], action) => {
@@ -9,10 +10,23 @@ const spellsReducer = (state = [], action) => {
     }
   };
 
+  const spellURL = (state = '', action) => {
+    switch (action.type) {
+        case 'SEARCH_SPELL':
+            return action.payload;
+            default: 
+            return state;
+    }
+  }
+
 
 
   
   // user will be on the redux state at:
   // state.shelf
-  export default spellsReducer;
+  export default combineReducers ({
+    spellsReducer,
+    spellURL
+
+  })
   
