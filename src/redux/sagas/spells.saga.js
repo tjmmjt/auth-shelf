@@ -24,6 +24,18 @@ function* getSingleSpell (action) {
     }
 }
 
+function* filterSpells (action) {
+    try {
+        const response = yield axios.get(`https://www.dnd5eapi.co/api/spells/${action.payload}`)
+        console.log('response', response);
+        yield put ({ type:'SEARCH_FILTER', payload: response.data})
+
+    }
+    catch (error) {
+        console.log('error getting spell url', error);
+    }
+}
+
 
 
 
@@ -31,6 +43,7 @@ function* getSingleSpell (action) {
 function* spellsSaga() {
     yield takeLatest ('FETCH_SPELLS', getSpells);
     yield takeLatest ('SPELL_URL', getSingleSpell)
+    yield takeLatest ('SPELL_FILTER', filterSpells)
 
 
 }
