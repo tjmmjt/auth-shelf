@@ -11,6 +11,16 @@ function* getItems (action) {
         console.log('error getting shelf', error);
     }
 }
+function* getUsernames (action) {
+    try {
+        const response = yield axios.get('/api/usernames')
+        console.log('response', response);
+        yield put({ type: 'SET_USERNAMES', payload: response.data });
+    }
+    catch (error) {
+        console.log('error getting shelf', error);
+    }
+}
 
 function* deleteItems (action) {
     try {
@@ -42,6 +52,7 @@ function* shelfSaga() {
     yield takeLatest ('FETCH_ITEMS', getItems)
     yield takeLatest ('DELETE_ITEM', deleteItems)
     yield takeLatest ('POST_ITEM', postItem)
+    yield takeLatest ('FETCH_USERS', getUsernames)
 }
 
 export default shelfSaga

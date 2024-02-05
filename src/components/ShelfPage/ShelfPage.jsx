@@ -3,29 +3,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import PostItem from '../PostItem/PostItem';
 
 function ShelfPage() {
-
+  useEffect(() => {
+    getUsernames()
+  }, [])
+  const getUsernames = () => {
+    dispatch({type:'FETCH_USERS'})
+  }
   const dispatch = useDispatch()
-
+  const usernames = useSelector(store => store.allUserData)
   const shelf = useSelector(store => store.shelf)
   const user = useSelector(store => store.user)
   // console.log('user', user);
-  console.log('shelf:', shelf);
+  // console.log('shelf:', shelf);
+  console.log('usernames', usernames);
 // console.log(shelf[0].user_id);
   const handleDelete = (event) => {
     const userID = event.target.closest('div').id
-    console.log("USER ID:", user.id)
-    console.log("USER... ID:", userID)
+    // console.log("USER ID:", user.id)
+    // console.log("USER... ID:", userID)
     const deleteItem = event.target.closest('button').id
     let deleteDescription = ''
     for (let item of shelf){
       if (item.id == deleteItem){
         deleteDescription = item.description
-        console.log('in for loop', deleteDescription);
+        // console.log('in for loop', deleteDescription);
       }
  
     }
 
-    console.log('delete item', deleteItem);
+    // console.log('delete item', deleteItem);
     if (user.id == userID){
       const payload = event.target.id
       // console.log('Payload:', payload)

@@ -19,6 +19,7 @@ import ShelfPage from '../ShelfPage/ShelfPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import SpellsPage from '../SpellsPage/SpellsPage';
 
 import './App.css';
 
@@ -66,6 +67,13 @@ function App() {
             path="/shelf"
           >
             <ShelfPage />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/spells"
+          >
+            <SpellsPage />
           </ProtectedRoute>
 
           <Route

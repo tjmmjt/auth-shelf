@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   pool
     .query(queryText)
     .then((result) => {
-      console.log("result", result);
+      // console.log("result", result);
       // send result in rows
       res.send(result.rows);
     })

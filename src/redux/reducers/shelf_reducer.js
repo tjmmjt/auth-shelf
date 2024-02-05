@@ -8,6 +8,16 @@ const shelfReducer = (state = [], action) => {
         return state;
     }
   };
+
+
+const usernameReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'SET_ITEM':
+      return action.payload;
+    default:
+      return state;
+  }
+};
   
   // user will be on the redux state at:
   // state.shelf
