@@ -1,14 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
 
 
-const FilterButton = () => {
+const FilterButton = (props) => {
 
     const dispatch = useDispatch()
-    const filteredStore = useSelector( store => store.spells.filterSpells)
-    console.log('filtered store', filteredStore);
-
-
-
+    // const filteredStore = useSelector( store => store.spells.filterSpells)
+    // console.log('filtered store', filteredStore);
     const handleChange = (event) => {
 
         let filteringValue = event.target.value
@@ -16,16 +14,16 @@ const FilterButton = () => {
 
       
 
-        console.log('filter changed', filteringValue);
+        // console.log('filter changed', filteringValue);
     }
 
     return (
         <div>
             <label>
-                Filter Spells
-                <select value="filteredLevel" onChange={(event) => { handleChange(event) }}>
+                Filter Spells By Level
+                <select  onChange={(event) => { handleChange(event) }}>
 
-                    <option value="?level=0&level=1&level=2&level=3&level=4&level=5&level=6&level=7&level=7&level=9">No Filter</option>
+                    <option value="">No Filter</option>
 
 
                     <option value="?level=0">Level 0</option>
@@ -50,7 +48,6 @@ const FilterButton = () => {
 
                 </select>
             </label>
-            <a id="url" href="?action=IT">IT</a>
 
         </div>
     )

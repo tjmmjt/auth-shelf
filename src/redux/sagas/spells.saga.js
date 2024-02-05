@@ -24,11 +24,23 @@ function* getSingleSpell (action) {
     }
 }
 
-function* filterSpells (action) {
+function* filterSpellsByLevel (action) {
     try {
         const response = yield axios.get(`https://www.dnd5eapi.co/api/spells/${action.payload}`)
         console.log('response', response);
-        yield put ({ type:'SEARCH_FILTER', payload: response.data})
+        yield put ({ type:'SEARCH_LEVEL_FILTER', payload: response.data})
+
+    }
+    catch (error) {
+        console.log('error getting spell url', error);
+    }
+}
+
+function* filterSpellsBySchool (action) {
+    try {
+        const response = yield axios.get(`https://www.dnd5eapi.co/api/spells/${action.payload}`)
+        console.log('response', response);
+        yield put ({ type:'SEARCH_SCHOOL_FILTER', payload: response.data})
 
     }
     catch (error) {
@@ -43,7 +55,8 @@ function* filterSpells (action) {
 function* spellsSaga() {
     yield takeLatest ('FETCH_SPELLS', getSpells);
     yield takeLatest ('SPELL_URL', getSingleSpell)
-    yield takeLatest ('SPELL_FILTER', filterSpells)
+    yield takeLatest ('SPELL_FILTER', filterSpellsByLevel)
+    yield takeLatest ('SPELL_SCHOOL_FILTER', filterSpellsBySchool)
 
 
 }

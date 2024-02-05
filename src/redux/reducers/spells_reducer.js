@@ -21,7 +21,16 @@ const spellsReducer = (state = [], action) => {
 
   const filterSpells = (state = [], action) => {
     switch (action.type) {
-        case 'SEARCH_FILTER':
+        case 'SEARCH_LEVEL_FILTER':
+            return action.payload;
+            default: 
+            return state;
+    }
+  }
+
+  const filterSpellsBySchool = (state = [], action) => {
+    switch (action.type) {
+        case 'SEARCH_SCHOOL_FILTER':
             return action.payload;
             default: 
             return state;
@@ -36,7 +45,8 @@ const spellsReducer = (state = [], action) => {
   export default combineReducers ({
     spellsReducer,
     spellURL,
-    filterSpells
+    filterSpells,
+    filterSpellsBySchool
 
   })
   
