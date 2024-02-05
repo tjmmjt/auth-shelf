@@ -32,7 +32,7 @@ function SpellsPage () {
       }
     return (
         <>
-        <h1> Here are the spells</h1>
+        <h1> Find the spells you need below 👇🏽</h1>
         <FilterLevel
         />
       

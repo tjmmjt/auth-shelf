@@ -1,25 +1,5 @@
-body {
-    background-color: #290000;
-  }
-  
-  .App {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  .loading {
-    color: #f7ce65;
-  }
-  
-  .spell-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    padding: 0;
-    margin: 0;
-  }
-  
+
+
 .spell-card {
     background-color: #f7ce65;
     border-radius: 1rem;
@@ -57,3 +37,4 @@ body {
     font-size: 0.75rem;
   }
   
+
