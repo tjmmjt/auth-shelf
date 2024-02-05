@@ -20,14 +20,16 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SpellsPage from '../SpellsPage/SpellsPage';
-
+import EquipmentPage from '../EquipmentPage/EquipmentPage';
+import RuleBookPage from '../RuleBookPage/RuleBookPage';
+import RuleCategory from '../RuleCategory/RuleCategory';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
-
+  const ruleBook = useSelector(store => store.ruleBook)
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
@@ -69,11 +71,32 @@ function App() {
             <ShelfPage />
           </ProtectedRoute>
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows SpellsPage else shows LoginPage
             exact
             path="/spells"
           >
             <SpellsPage />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows SpellsPage else shows LoginPage
+            exact
+            path="/rulebook"
+          >
+            <RuleBookPage />
+          </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows SpellsPage else shows LoginPage
+            
+            path='/rulebook/filtered'
+          >
+            <RuleCategory />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows EquipmentPage else shows LoginPage
+            exact
+            path="/equipment"
+          >
+            <EquipmentPage />
           </ProtectedRoute>
 
           <Route

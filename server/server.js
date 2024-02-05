@@ -28,6 +28,7 @@ app.use('/api/user', userRouter);
 app.use('/api/shelf', shelfRouter);
 app.use('/api/usernames', userRouter);
 app.use('/api/spells', dndRouter);
+app.use('/api/equipment', dndRouter);
 
 // Serve static files
 app.use(express.static('build'));

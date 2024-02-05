@@ -5,7 +5,7 @@ const axios = require('axios')
 
 
 router.get('/', (req, res) => {
-    axios.get(`https://www.dnd5eapi.co/api/spells`)
+    axios.get(`https://www.dnd5eapi.co/`)
     .then((response) => {
         res.send(response.data);
     })

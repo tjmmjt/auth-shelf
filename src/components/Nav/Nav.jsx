@@ -30,10 +30,15 @@ function Nav() {
             <LogOutButton className="navLink" />
           </>
         )}
+        <Link className="navLink" to="/equipment">
+          Equipment
+        </Link>
           <Link className="navLink" to="/spells">
           Spells
         </Link>
-
+        <Link className="navLink" to="/rulebook">
+          RuleBook
+        </Link>
         <Link className="navLink" to="/about">
           About
         </Link>
